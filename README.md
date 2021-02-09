@@ -92,6 +92,8 @@ Simply run the following command in your `servicenow-em-demo` folder to **start*
 docker-compose up -d
 ```
 
+You can now open your web browser, navigate to the URL of the demo (e.g. `http://applesupport.com:8084`) and the demo will be working!
+
 To **stop** the demo, from your `servicenow-em-demo` folder run the following commmand:
 
 ```
