@@ -6,5 +6,5 @@ services:
       volumes:
           - ./background.png:/usr/share/nginx/html/background.png
       environment:
-          - MODULE_ID=60c794c3db862010b7c8dacbd39619fe
-          - INSTANCE_NAME=dl3
+          - MODULE_ID=${SN_EM_MODULE_ID}
+          - INSTANCE_NAME=${SN_EM_INSTANCE_NAME}
