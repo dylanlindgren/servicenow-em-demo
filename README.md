@@ -53,6 +53,8 @@ In terminal, open your hosts file for editing using the following command:
 ```
 sudo nano /etc/hosts
 ```
+*NOTE: You will need admin rights on your machine to run this command*
+
 Add a line at the bottom to resolve *applesupport.com* to *127.0.0.1* (your computer)
 
 ```
