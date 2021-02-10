@@ -72,8 +72,8 @@ There are a number of steps required on the ServiceNow instance which are all do
 
 1. [Configure an Engagement Messenger module](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-engagement-messenger-module.html) - Take a note of the Sys ID of the Module as we will use this in the next step. *NOTE make sure you activate this record! (by default it will be "Inactive")*
 2. [Configure CORS rule for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-cors-for-rest-api-ec.html) - Set this to the full address we will be accessing the demo on. For example: `http://applesupport.com`
-3. [Create HTTP response headers for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-http-response-headers-for-ec.html) - You can set this value to `frame-ancestors 'self' *`
-4. [Configure the Virtual Agent System Properties](https://docs.servicenow.com/bundle/london-performance-analytics-and-reporting/page/administer/virtual-agent/task/embed-va-standalone-client.html) - You can set this vaule to `frame-ancestors 'self' *`
+3. [Create HTTP response headers for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-http-response-headers-for-ec.html) - You can set this `Content-Security-Policy` header value to `frame-ancestors 'self' *`
+4. [Configure the Virtual Agent System Properties](https://docs.servicenow.com/bundle/london-performance-analytics-and-reporting/page/administer/virtual-agent/task/embed-va-standalone-client.html) - (You can set the value of the `com.glide.cs.embed.csp_frame_ancestors` system property to `'self' *`)
 
 ### 5) Configure the Demo
 
