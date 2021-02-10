@@ -69,7 +69,7 @@ Press `CTRL + O` to save the file, and then `CTRL + X` to quit.
 There are a number of steps required on the ServiceNow instance which are all documented on the ServiceNow Docs website.
 
 1. [Configure an Engagement Messenger module](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-engagement-messenger-module.html) - Take a note of the Sys ID of the Module as we will use this in the next step.
-2. [Configure CORS rule for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-cors-for-rest-api-ec.html) - Set this to the full address we will be accessing the demo on plus the port number `8084`. For example: `http://applesupport.com:8084`
+2. [Configure CORS rule for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-cors-for-rest-api-ec.html) - Set this to the full address we will be accessing the demo on. For example: `http://applesupport.com`
 3. [Create HTTP response headers for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-http-response-headers-for-ec.html) - You can set this value to `frame-ancestors 'self' *`
 4. [Configure the Virtual Agent System Properties](https://docs.servicenow.com/bundle/london-performance-analytics-and-reporting/page/administer/virtual-agent/task/embed-va-standalone-client.html) - You can set this vaule to `frame-ancestors 'self' *`
 
@@ -80,9 +80,10 @@ Open the `.env` file inside the `servicenow-em-demo` folder. By default it will 
 ```
 SN_EM_MODULE_ID=60c794c3db862010b7c8dacbd39619fe
 SN_EM_INSTANCE_NAME=dl3
+SN_EM_PORT=80
 ```
 
-Just replace these with the Sys ID of your Engagement Messenger module, and the name of your instance and save the file.
+Just replace the value of `SN_EM_MODULE_ID` with the Sys ID of your Engagement Messenger module, and the value of `SN_EM_INSTANCE_NAME` with the name of your instance and save the file.
 
 ## Running the Demo
 

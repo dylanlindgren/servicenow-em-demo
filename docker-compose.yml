@@ -2,7 +2,7 @@ services:
     engagement-messenger:
       image: dylanlindgren/servicenow-em-client
       ports:
-        - "8084:80"
+        - "${SN_EM_PORT}:80"
       volumes:
           - ./background.png:/usr/share/nginx/html/background.png
       environment:
