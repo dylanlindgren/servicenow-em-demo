@@ -105,6 +105,8 @@ docker-compose down
 
 ## Additional Notes
 
-By default the app runs on port `80`, which means that it can be accessed without needing to specify it in the url (e.g. you don't need to type in `http://www.applesupport-demo.com:80`, you can just type in `http://www.applesupport-demo.com`).
+By default the app runs on port `80`, which is the default port for http traffic and means that it can be accessed without needing to specify it in the url (e.g. you can type in `http://www.applesupport-demo.com` instead of the full `http://www.applesupport-demo.com:80`, you can just type in ).
 
-Port 80 is a common port though, and if you already have something running on that port you might need to change it to another port such as `8084`. To do this, just update the `SN_EM_PORT` value in the `.env` file inside the `servicenow-em-demo` folder to the port you want it to run on. You will also need to update the CORS rule (from step 4) to include the port as well.
+Port 80 is a common port though, and if you already have something running there you might need to change it to another port such as `8084`.
+
+To do this, just update the `SN_EM_PORT` value in the `.env` file inside the `servicenow-em-demo` folder to the port you want it to run on. You will also need to update the CORS rule (from step 4) to include the port as well.
