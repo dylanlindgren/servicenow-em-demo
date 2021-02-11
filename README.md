@@ -58,7 +58,7 @@ sudo nano /etc/hosts
 Add a line at the bottom to resolve *applesupport.com* to *127.0.0.1* (your computer)
 
 ```
-127.0.0.1       applesupport.com
+127.0.0.1       www.applesupport-demo.com
 ```
 
 ![Hosts file](images/hosts.png)
@@ -71,7 +71,7 @@ Press `CTRL + O` to save the file, and then `CTRL + X` to quit.
 There are a number of steps required on the ServiceNow instance which are all documented on the ServiceNow Docs website.
 
 1. [Configure an Engagement Messenger module](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-engagement-messenger-module.html) - Take a note of the Sys ID of the Module as we will use this in the next step. *NOTE make sure you activate this record! (by default it will be "Inactive")*
-2. [Configure CORS rule for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-cors-for-rest-api-ec.html) - Set this to the full address we will be accessing the demo on. For example: `http://applesupport.com`
+2. [Configure CORS rule for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-cors-for-rest-api-ec.html) - Set this to the full address we will be accessing the demo on. For example: `http://www.applesupport-demo.com`
 3. [Create HTTP response headers for Engagement Messenger](https://docs.servicenow.com/bundle/quebec-customer-service-management/page/product/customer-service-management/task/create-http-response-headers-for-ec.html) - You can set this `Content-Security-Policy` header value to `frame-ancestors 'self' *`
 4. [Configure the Virtual Agent System Properties](https://docs.servicenow.com/bundle/london-performance-analytics-and-reporting/page/administer/virtual-agent/task/embed-va-standalone-client.html) - (You can set the value of the `com.glide.cs.embed.csp_frame_ancestors` system property to `'self' *`)
 
@@ -95,7 +95,7 @@ Simply run the following command in your `servicenow-em-demo` folder to **start*
 docker-compose up -d
 ```
 
-You can now open your web browser, navigate to the URL of the demo (e.g. `http://applesupport.com:8084`) and the demo will be working!
+You can now open your web browser, navigate to the URL of the demo (e.g. `http://www.applesupport-demo.com`) and the demo will be working!
 
 To **stop** the demo, from your `servicenow-em-demo` folder run the following commmand:
 
@@ -105,4 +105,6 @@ docker-compose down
 
 ## Additional Notes
 
-* By default the app runs on port `80`, which means that it can be accessed without needing to specify it in the url (e.g. you don't need to type in `http://applesupport.com:80`). Port 80 is a common port though, and if you already have something running on that port you might need to change it to another port such as `8084`. To do this, just update the `SN_EM_PORT` value in the `.env` file inside the `servicenow-em-demo` folder to the port you want it to run on. You will also need to update the CORS rule (from step 4) to include the port as well.
+By default the app runs on port `80`, which means that it can be accessed without needing to specify it in the url (e.g. you don't need to type in `http://www.applesupport-demo.com:80`, you can just type in `http://www.applesupport-demo.com`).
+
+Port 80 is a common port though, and if you already have something running on that port you might need to change it to another port such as `8084`. To do this, just update the `SN_EM_PORT` value in the `.env` file inside the `servicenow-em-demo` folder to the port you want it to run on. You will also need to update the CORS rule (from step 4) to include the port as well.
